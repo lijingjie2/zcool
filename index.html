@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>zcool</title>
+		<link rel="stylesheet" type="text/css" href="css/zcool-link.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body >
+		<header>
+			<nav>
+				<div class="logo">
+					<img src="img/index/logo.png" />
+				</div>
+				<div class="menu">
+					<div class="menu-box">
+						<ul class="menu-list-content">
+							<li class="index daoh">
+								<a class="menu-list-box" href="index.html">首页</a>
+							</li>
+							<li class="discover daoh">
+								<a class="menu-list-box" href="discover.html">发现</a>
+							</li>
+							<li class="active daoh">
+								<a class="menu-list-box" href="active.html">活动</a>
+								<!--<ul class="hide-2">
+									<li class="h">设计大赛</li>
+									<li class="h">专题活动</li>
+									<li class="h">线上活动</li>
+									<li class="h">线下活动</li>
+								</ul>-->
+							</li>
+							<li class="material daoh">
+								<a class="menu-list-box" href="material.html">正版素材</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="search"></div>
+				<div class="user-center">
+					<span class="last">
+						<a href="">注册</a>
+					</span>
+					<span class="last">
+						<a href="">登陆</a>
+					</span>
+
+				</div>
+			</nav>
+		</header>
+		<div class="main clearfix">
+			<div class="slider-adv-box">
+				<div class="slider">
+					<ul>
+						<li style="display: block;"><img src="img/index/index-1.jpg" class="img-index" /></li>
+						<li><img src="img/index/index-2.png" class="img-index" /></li>
+						<li><img src="img/index/index-3.jpg" class="img-index" /></li>
+						<li><img src="img/index/index-4.jpg" class="img-index" /></li>
+						<li><img src="img/index/index-5.jpg" class="img-index" /></li>
+					</ul>
+					<div class="btn" id="left"></div>
+					<div class="btn" id="right"></div>
+					<div class="circles">
+						<span class=current></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<canvas id="sourcecopy" width="1380" height="350"></canvas>
+				<!--<div class="kong">-->
+					
+			<!--	</div>-->
+				<div class="content">
+					<ul id="da-thumbs" class="da-thumbs">
+						<li class="index-2">
+							<img src="img/index/index-2.1.jpg" class="img-index-2"/>
+							<div class="hot_info">
+								<h2 title=""></h2>
+								<em></em>
+								<p title=""></p>
+							</div>
+						</li>
+						<li class="index-2">
+							<img src="img/index/index-2.2.jpg" class="img-index-2"/>
+							<div class="hot_info">
+								<h2 title=""></h2>
+								<em></em>
+								<p title=""></p>
+							</div>
+						</li>
+						<li class="index-2">
+							<img src="img/index/index-2.3.jpg" class="img-index-2"/>
+							<div class="hot_info">
+								<h2 title=""></h2>
+								<em></em>
+								<p title=""></p>
+							</div>
+						</li>
+						<li class="index-2">
+							<img src="img/index/index-2.4.jpg" class="img-index-2"/>
+							<div class="hot_info">
+								<h2 title=""></h2>
+								<em></em>
+								<p title=""></p>
+							</div>
+						</li>
+						<li class="index-2-last">
+							<img src="img/index/index-2.5.jpg" class="img-index-2"/>
+							<div class="hot_info">
+								<h2 title=""></h2>
+								<em></em>
+								<p title=""></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="subnav-content-wrap">
+				<div class="tab-nav-contentbox">
+					<ul class="subnav-content text-center">
+						<li id="course-li" class="current2">
+							首页推荐
+						</li>
+						<li id="forum-li" class="current2">
+							最新发布
+						</li>
+						<li id="data-li" class="current2">
+							上升最快
+						</li>
+					</ul>
+					<div class="zcool-award">
+						<img src="" />
+					</div>
+				</div>
+			</div>
+			<div class="all-work-list">
+				<div class="work-list-box1">
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index-3.1.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href="##">迪克城</a>
+							</p>
+							<p>插画-游戏原画</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index-3.2.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href=""##">HOUSE VISION 2016丨梯田</a>
+							</p>
+							<p>空间-建筑设计</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index-3.3.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href="">VANS这波真的很飞！</a>
+							</p>
+							<p>影片-短片</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index-3.4.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href="">苏丹，东非土地上的群戏</a>
+							</p>
+							<p>摄影-人文/纪实</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box-last">
+						<div class="card-img">
+							<img src="img/index/index-3.5.jpg" class="img-index-3"/>
+						</div>
+						<div class="card-info2">
+							<p>
+								<a href="">假日旅行</a>
+							</p>
+							<p>摄影-灵感图册</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index4.1.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href="">2018 PATCH STUDIO 工作室</a>
+							</p>
+							<p>工业/产品-家具</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index-4.2.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href="">【迷恋】INFATUATION 葡萄酒</a>
+							</p>
+							<p>平面-图案</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index-4.3.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href="">次元大学#17：配配军团</a>
+							</p>
+							<p>动漫-中/长篇漫画</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box">
+						<div class="card-img">
+							<img src="img/index/index-4.4.jpg" class="img-index-3 img-index-3-last"/>
+						</div>
+						<div class="card-info">
+							<p>
+								<a href="">AI Dentist</a>
+							</p>
+							<p>三维-人物/生物</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					<div class="card-box-last">
+						<div class="card-img">
+							<img src="img/index/index-4.5.jpg" class="img-index-3"/>
+						</div>
+						<div class="card-info2">
+							<p>
+								<a href="">设计大事件[2018年6月号]</a>
+							</p>
+							<p>文章-资讯-多领域</p>
+							<p>6小时前</p>
+						</div>
+					</div>
+					
+				</div>
+				<div class="work-list-box2" style="display: none;">
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-90.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>厦门</p>
+								<p>平面：字体</p>
+								<p>4分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-89.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>小暑</p>
+								<p>动漫：单幅漫画</p>
+								<p>4分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-88.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>小暑小涂</p>
+								<p>插画：商业插画</p>
+								<p>4分钟前<</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-87.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>生日贺卡</p>
+								<p>平面：宣传品</p>
+								<p>4分钟前<</p>
+							</div>
+						</div>
+						<div class="card-box-last">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-86.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>扫描枪海报</p>
+								<p>平面：海报</p>
+								<p>17小时前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-85.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>雨珊 品牌女装</p>
+								<p>空间：室内设计</p>
+								<p>4分钟前<</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-84.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>总结木用上的图</p>
+								<p>网页：广告图</p>
+								<p>4分钟前<</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-83.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>烟台</p>
+								<p>平面：字体</p>
+								<p>4分钟前<</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-82.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>诗碧曼坪山天虹店</p>
+								<p>空间：室内设计</p>
+								<p>4分钟前<</p>
+							</div>
+						</div>
+						<div class="card-box-last">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-81.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>6.28电动搓澡神器</p>
+								<p>网页：电商</p>
+								<p>4分钟前<</p>
+							</div>
+						</div>
+					</div>
+					<div class="work-list-box3" style="display: none;">
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-80.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>肌理壁膜艺术漆</p>
+								<p>其他：其他</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-79.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>	The war</p>
+								<p>临摹：三维</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-78.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>传统美术</p>
+								<p>纯艺术：素描</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-77.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>传统美术</p>
+								<p>纯艺术：油画</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box-last">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-76.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>worldmachine10号</p>
+								<p>三维：场景</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-75.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>夏日扁平小清新公司</p>
+								<p>平面：演示</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-74.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>墨曲龙川</p>
+								<p>空间：室内设计</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-73.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>墨曲呼和浩特</p>
+								<p>空间：室内设计</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-72.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>清新简洁通用项目设计</p>
+								<p>平面：PPT演示</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+						<div class="card-box-last">
+							<div class="card-img">
+								<a href="##"><img src="img/discover/discover-71.jpg" class="img-index-3"/></a>
+							</div>
+							<div class="card-info">
+								<p>盒子</p>
+								<p>平面包装</p>
+								<p>9分钟前</p>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div class="pageturning">
+				<a href="">1</a>
+				<a href="">2</a>
+				<a href="">3</a>
+				<a href="">4</a>
+				<a href="">5</a>
+				<a href="">6</a>
+				<a href="">7</a>
+				<a href="">...</a>
+				<a href="">99</a>
+				<a href="">100</a>
+				<a href="">></a>
+
+			</div>
+			<div class="advlong-bottom">
+				<img src="img/index/index5.jpg" class="index5"/>
+
+			</div>
+			<div class="all-work-list js-related-covers">
+				<p class="album-title">
+					"猜你喜欢"
+					<span class="zcool-link-color right">换一换</span>
+				</p>
+				<div class="loadding-media-h" id="related-like">
+					<div class="hot-album">
+						<div class="card-type2-box">
+							<div class="card-type2-img">
+								<img src="img/index/index-6.1.jpg"/>
+							</div>
+							<div class="card-type2-title2-title-box">
+								<p>解决配色问题</p>
+							</div>
+						</div>
+						<div class="card-type2-box">
+							<div class="card-type2-img">
+								<img src="img/index/index-6.2.jpg"/>
+							</div>
+							<div class="card-type2-title2-title-box">
+								<p>宠物户外拍摄</p>
+							</div>
+						</div>
+						<div class="card-type2-box">
+							<div class="card-type2-img">
+								<img src="img/index/index-6.3.jpg"/>
+							</div>
+							<div class="card-type2-title2-title-box">
+							    <p>设计中的逻辑</p>
+							</div>
+						</div>
+						<div class="card-type2-box">
+							<div class="card-type2-img">
+								<img src="img/index/index-6.4.jpg"/>
+							</div>
+							<div class="card-type2-title2-title-box">
+								<p>灯光气氛图丨动画电影</p>
+							</div>
+						</div>
+						<div class="card-type2-box-last">
+							<div class="card-type2-img">
+								<img src="img/index/index-6.5.jpg"/>
+							</div>
+							<div class="card-type2-title2-title-box">
+								<p>2017年部分作品</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer1">
+				<div class="foot" style="width: 64px">
+					<button>全部<b></b></button>
+					<ul>
+						<li>全部</li>
+						<li>作品</li>
+						<li>文章</li>
+						<li>欣赏</li>
+						<li>素材</li>
+						<li>设计师</li>
+					</ul>
+				</div>
+			</div>
+			<input type="text" />
+			<span></span>
+			<div class="footer2">
+				<dl>
+					<dt style="color: white">关于</dt>
+					<dt>关于站酷</dt>
+					<dt>版权声明</dt>
+					<dt>关于隐私</dt>
+					<dt>免责声明</dt>
+					<dt>网站地图</dt>
+					<dt>加入站酷</dt>
+				</dl>
+				<dl>
+					<dt style="color: white">栏目</dt>
+					<dt>原创作品</dt>
+					<dt>设计文章</dt>
+					<dt>设计赛事</dt>
+					<dt>精彩评论</dt>
+					<dt>站酷海洛创意</dt>
+					<dt>站酷高高手</dt>
+				</dl>
+				<dl>
+					<dt style="color: white">商务</dt>
+					<dt>企业服务</dt>
+					<dt>赛事服务</dt>
+					<dt>招聘服务</dt>
+					<dt>图片服务</dt>
+					<dt>培训服务</dt>
+				</dl>
+				<dl>
+					<dt style="color: white">联系</dt>
+					<dt>联系我们</dt>
+					<dt>站酷微博</dt>
+					<dt class="dt">
+                    站酷微信
+                    <img src="img/zcwx.png" alt=""/>
+                </dt>
+				</dl>
+				<dl>
+					<dt style="color: white">帮助</dt>
+					<dt>站酷规则</dt>
+					<dt>常见问题</dt>
+				</dl>
+				<dl>
+					<dt style="color: white">友链</dt>
+					<dt>方正字库</dt>
+					<dt>星云网</dt>
+					<dt>站长之家</dt>
+					<dt>蜂鸟网</dt>
+					<dt>汉仪字库</dt>
+					<dt>中电云集</dt>
+					<dt>更多</dt>
+				</dl>
+				<div class="last">
+					<p style="color: white">版权信息</p>
+					<p>站酷（ZCOOL）会员所发布展示的“原创作品/文章”版权归原作者所有，任何商业用途均须联系作者。如未经授权用作他处，作者将保留追究侵权者法律责任的权利。 京ICP备11017824号-4 / 京ICP证130164号 北京市公安局朝阳分局备案编号:110105000501 Copyright © 2006-2017 ZCOOL</p>
+				</div>
+			</div>
+			<a href="#lp">
+				<div class="lp"></div>
+			</a>
+		</footer>
+		<script src="js/Jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/discover.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/home.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			var currIndex = 0;
+			var nextIndex = 1;
+			var timer;
+			timer = setInterval(move, 2000)
+			$(".slider").mouseover(function() {
+				clearInterval(timer)
+			})
+			$(".slider").mouseleave(function() {
+				timer = setInterval(move, 2000)
+			})
+
+			function move() {
+				$(".slider li").eq(currIndex).fadeOut(2000);
+				$(".slider li").eq(nextIndex).fadeIn(2000);
+				$(".slider span").eq(currIndex).removeClass("current")
+				$(".slider span").eq(nextIndex).addClass("current")
+				currIndex = nextIndex;
+				nextIndex++;
+				if(nextIndex > 4) {
+					nextIndex = 0;
+				}
+			}
+			$("#right").click(function() {
+				move();
+			})
+			$("#left").click(function() {
+				nextIndex = currIndex - 1;
+				if(nextIndex < 0) {
+					nextIndex = 4
+				}
+				move();
+			})
+			$(".slider span").mouseover(function() {
+				//console.log($(this).index())
+				nextIndex = $(this).index();
+				move();
+			})
+		</script>
+	</body>
+
+</html>

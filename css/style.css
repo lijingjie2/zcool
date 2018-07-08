@@ -1,0 +1,190 @@
+body{ color: #333; overflow-x:hidden}
+.wp{ width: 1226px;}/*网页整体宽度*/
+a{color:#333}/*默认链接颜色*/
+.iconpic-nav-pic{
+	background-image:url(../img/iconpic-pic.png); background-size:100% auto;
+	}
+.iconpic{ 
+	display:inline-block;
+	 vertical-align:text-top;
+	  width:16px; 
+	  height:16px; 
+	  background-position:center;
+	   background-repeat:no-repeat;
+	   }
+a:hover .iconpic-nav-pic,a.active .iconpic-nav-pic{ 
+	background-image:url(../img/iconpic-pic-hover.png)}
+.iconpic-nav-video{
+	background-image:url(../img/iconpic-nav-vedio.png); 
+	background-size:100% auto}
+#sitelink.dropDown {
+	width: 50px;
+	height: 40px;
+}
+#sitelink.dropDown > a.dropDown_A{ 
+	display:block;text-align:left;text-decoration:none;}
+.iconpic-nav-menu{ 
+	width:18px; height:18px; 
+	background-image:url(../img/iconpic-menu.png); 
+	background-size:100% auto}
+#sitelink.dropDown > .dropDown-menu{ 
+	right:0; left:auto;min-width:80px; text-align:left}
+#sitelink.dropDown > .dropDown-menu li a{
+	height:32px;
+	line-height:32px;
+	padding:0 18px; 
+	border-bottom:solid 1px #fff}
+//轮播图界面	
+.banner{ position:relative;text-align:center;}
+.iconpic-index-banner-logo{ position:absolute; left:0; top:30px}
+.iconpic-index-banner-logo{
+	 width:140px; 
+	 height:44px; 
+	 background-image:url(../img/logo-hellorf_121x75.png); 
+	 background-size:140px auto}
+.searchBar-big{
+	width:695px; 
+	height:70px;
+	top:195px;
+	margin-left:-347px;
+	background:no-repeat 0 0; border:none}
+.searchBar-big .searchTxt{ 
+	/*width:452px;*/ 
+	width:486px; 
+	left:7px; top:7px;
+	 padding:16px 19px;
+	  padding-right:0; font-size:14px}
+.searchTxt{font-size:12px}
+.searchBar-big .searchBtn{ 
+	width:84px; height:60px; top:5px; right:5px;
+	-khtml-border-top-right-radius:2px;
+	-ms-border-top-right-radius:2px;
+	-o-border-top-right-radius:2px;
+	-moz-border-top-right-radius:2px;
+	-webkit-border-top-right-radius:4px;border-top-right-radius:2px;
+	-khtml-border-bottom-right-radius:2px;-ms-border-bottom-right-radius:2px;-o-border-bottom-right-radius:2px;-moz-border-bottom-right-radius:2px;-webkit-border-bottom-right-radius:4px;border-bottom-right-radius:2px} 
+.banner .tabcon{ z-index:2}
+.banner .tabcon li{
+	float:left;overflow:hidden;
+	 width:100%; height:460px;
+	  background-position:center; 
+	  background-repeat:no-repeat}
+a.icon-download{ z-index:1;}
+.banner-down{ position:absolute; right:0; bottom:0px; left:0; top:0}
+.dots{
+	position:absolute;
+	text-align:center; 
+	z-index:10; 
+	width:800px; left:50%; margin-left:-400px}
+.dots li{
+	display:inline-block;
+	margin-right:10px;
+	cursor:pointer; 
+	width:14px; 
+	height:14px;
+	-khtml-border-radius:14px;
+	-ms-border-radius:14px;
+	-o-border-radius:14px;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+	border-radius:14px;background-color:rgba(0,0,0,0.4)}
+.dots li.on{ background-color:#ff4a39}
+.tab{ width: 100%;height:460px;overflow:hidden;margin:0;position: relative;}
+			.tab ul{position: absolute;left: 0;top: 0;}
+			.tab li{float: left;}
+			.tab img{background-repeat: no-repeat;width:1350px;height: 460px;}
+			.tab>a{font-size: 40px;position: absolute;line-height: 50px;height: 50px;top: 115px;padding: 0;}
+			#goPrev{left: 10px;}
+			#goNext{right: 10px;}
+			.tab ol{position: absolute;bottom: 10px;left: 50%;transform: translateX(-50%);}
+			.tab ol li{width: 10px;height: 10px;border-radius: 50%;background: rgba(0,0,0,0.5);margin: 0 3px;}
+			.tab ol .ac{background: rgba(255,0,0,0.5);}
+	//下载量框
+.c-bbb{ color:#bbb}
+.c_primary,.c_primary a{ color:#EA4335} /*强调颜色*/
+.tongji-bar{
+	height:60px;
+	line-height:60px; 
+	text-align:center; 
+	font-size:20px; 
+	background-color:rgba(0,0,0,0.75)}
+.feature .item{ float:left;width:337px; margin-bottom:0}
+#feature-1 dt{ background-image:url(../img/tc4-1.png)}
+.feature .item dt{ font-size:20px;padding-left:54px; height:45px; line-height:45px; font-weight:400; background-repeat:no-repeat; background-position:0 center}
+.feature .item dd{ margin-left:0; margin-top:20px; color:#919090; font-size:14px;}
+.feature .item dt{ font-size:20px;padding-left:54px; height:45px; line-height:45px; font-weight:400; background-repeat:no-repeat; background-position:0 center}
+#feature-2 dt{ background-image:url(../img/tc4-2.png)}
+#feature-3 dt{ background-image:url(../img/tc4-3.png)}
+#feature-4 dt{ background-image:url(../img/tc4-3.png)}
+.c_666,.c_666 a{ color:#666}/*灰色颜色*/
+.index-pic-list{ margin-right:-22px}
+.index-pic-list li{ float:left;width:290px; margin-right:22px; position:relative}
+.index-pic-list li .picbox{ overflow:hidden; border:solid 2px #f1f1f1;}
+.index-pic-list li .picbox,.index-pic-list li img{display:block; width:290px; height:218px;}
+.index-pic-list li img {transition: 1s;-moz-transition: 1s;-webkit-transition: 1s;-o-transition: 1s;}
+.index-pic-list li:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+a:hover,a:focus{color:#F4523B}/*鼠标经过的颜色*/
+.index-pic-list li .textbox{ display:block; margin-top:10px; font-size:18px;}
+.index-pic-list li .textbox a{ color:#666}
+.index-fenlei-list{ margin-top:20px;margin-right:-20px}
+.index-fenlei-list li{ float:left;text-align:center; margin-right:13px; margin-top:10px}
+.index-fenlei-list li a{ display:block;width:140px; height:46px; line-height:46px; border:solid 1px #f1f1f1;font-size:14px; text-decoration:none; color:#666; background-color:#fff}
+.index-fenlei-list li a:hover{ color:#fff; background-color:#f34d37; text-decoration:none;}
+#yonghu ul li{ float:left;width:1226px;height:186px;overflow:hidden; padding:0}
+#yonghu ul li .item{padding-top:25px;padding-left:25px;height:161px;background:url(../images/user-bg2.png) no-repeat 0 0;}
+#yonghu ul li .item2{width:578px;height:161px;padding-top:25px;padding-left:25px;float:left;background:url(../images/user-bg.png) no-repeat 0 0;}
+#yonghu ul .picbox{ display:block; width:110px;height:110px;border:solid 4px #e4e4e4; border-radius:50%; float:left}
+#yonghu ul .picbox img{ display:block;width:110px; height:110px; border-radius:50%;}
+#yonghu ul .textbox{ margin-left:138px;color:#666; padding-right:20px;}
+#yonghu ul .textbox dt{ font-weight:normal; padding-top:10px}
+#yonghu ul .textbox dd{ margin:0; padding:0; color:#919090; line-height:28px;font-size:16px; padding-top:15px}
+
+#yonghu2 ul li{ float:left;width:380px;height:280px;overflow:hidden; padding:0; background-color:#fff; margin-right:40px}
+#yonghu2 ul li:last-chilc{ margin-right:0}
+#yonghu2 ul li .pic-box{ padding:20px; text-align:center; height:50px; width:auto;}
+#yonghu2 ul li .pic-box img{ height:50px}
+#yonghu2 ul li .dt{ padding:0 22px; height:140px; font-size:14px; overflow:hidden; line-height:26px; color:#666}
+#yonghu2 ul li .dd{padding:0 22px; font-size:14px; color:#999; overflow:hidden; white-space:nowrap; margin-top:10px}
+#yonghu2 .prev,#yonghu2 .next{ width:36px; height:36px; margin-top:-18px}
+#yonghu2 .prev{ left:-18px}
+#yonghu2 a.prev:hover{ background-position:0 -36px}
+#yonghu2 .next{ right:-11px;background-position:0 -72px}
+#yonghu2 .next:hover{ background-position:0 -108px}
+#flink-logo{ margin-left:-5px}
+#flink-logo .rollpicshow{ margin-left:-10px}
+
+
+.line{ font-size: 0px; line-height: 0px; border-top: solid 1px #eee; float: none}
+.line-2{ border-top:solid 1px #e8e8e8}
+.c_sub,.c_sub a{ color:#919090}/*次文字颜色*/
+.footer-nav li{ float:left; width:99px;}
+.footer{ background-color:#ededed;font-size:12px;color:#999;line-height:22px;padding:13px 0; margin-top:45px}
+.footer a,footer a:hover{color:#999}
+#rollpicshow1 ul{
+margin: 0;padding: 0;position: relative;list-style-type: none;z-index: 1;width: 5040px;left: -1260px;
+}
+#rollpicshow1 ul li{
+	overflow: hidden;float: left;width: 380px;height: 280px;
+}
+#rollpicshow2 ul{
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+	position: relative;
+	list-style-type: none;
+	width: 4309px;
+}
+#rollpicshow2 ul li{
+	overflow: hidden;
+	left: 0;
+	width: 113px;
+	height: 50px;
+}
+.gifimg{right: 0; position: fixed;background-repeat: no-repeat; bottom:330px;background-image:url(../img/iconpic-gifimg.png);background-size:40px auto;background-color: rgba(255,255,255,0);}
+.rollpic.hover .prev,.rollpic.hover .next{display:block}
+.rollpic .prev{background-position:0 0}
+.rollpic .prev:hover{background-position:0 -24px}
+.rollpic .next{background-position:0 -48px}
+.rollpic .next:hover{background-position:0 -72px}
+.rollpicshow{width:100%}
+.rollpicshow li{padding:0 13px;float:left;overflow:hidden}

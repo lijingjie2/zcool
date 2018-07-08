@@ -1,0 +1,202 @@
+.main{
+	width: 1000px;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+.main .btn img{
+	width: 100%;
+	padding-top:20px;
+	background: #FFFFFF;
+}
+.main .classify-select{
+	padding-top: 20px;
+	height: 80px;
+	width: 100%;
+	position: relative;
+	background:#FFFFFF ;
+}
+.main .classify-select::after{
+	content: "";
+	position: absolute;
+	width: 1520px;
+	height: 1px;
+	background: #eeeeee;
+	left: -260px;
+	top: 0;
+}
+.main .classify-select ul li{
+	float: left;
+	height: 30px;
+	width: 60px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-left:-14px ;
+	margin-right:16px ;
+	
+}
+.main .classify-select ul li a{
+	color: #000000;
+}
+.main .classify-select li:hover {
+	background: #dadada;
+
+}
+.main .advlong-bottom img{
+	width: 100%;
+	margin-top:20px ;
+}
+.all-work-list {
+	width: 1000px;
+}
+.subnav-content-wrap{
+	width: 100%;
+	height: 56px;
+	display: block;
+	padding-top: 10px;
+	margin-bottom: 30px;
+}
+
+.subnav-content-wrap .tab-nav-contentbox .subnav-content{
+	margin: 0 auto;
+}
+
+.text-center{
+	padding-left: 300px;
+	text-align: center;
+}
+
+.subnav-content .current2{
+	font-size: 18px;
+	display: inline-block;
+	float: left;
+	padding:0 30px;
+}
+.subnav-content li{
+	text-align: center;
+	
+}
+.subnav-content li:hover{
+	background: #dadada;
+	
+}
+.subnav-content-wrap {
+	color: #000000;
+}
+.subnav-content-wrap a:hover{
+	color: #00ff00;
+}
+.work-list-box1 .card-box{
+	float: left;
+	width: 15%;
+	padding:10px 10px ;
+	border: 1px solid #F4F4F4;
+	border-radius:3px ;
+	margin: 10px 14px;
+	background: #F4F4F4;
+}
+.work-list-box1 .card-box .card-img:hover{
+	opacity: 0.8;
+}
+.work-list-box2 .card-box{
+	float: left;
+	width: 15%;
+	padding:10px 10px ;
+	border: 1px solid #F4F4F4;
+	border-radius:3px ;
+	margin: 10px 14px;
+	background: #F4F4F4;
+	
+}
+.work-list-box2 .card-box .card-img:hover{
+	opacity: 0.8;
+}
+.work-list-box3 .card-box{
+	float: left;
+	width: 15%;
+	padding:10px 10px ;
+	border: 1px solid #F4F4F4;
+	border-radius:3px ;
+	margin: 10px 14px;
+	background: #F4F4F4;
+	
+}
+.work-list-box3 .card-box .card-img:hover{
+	opacity: 0.8;
+}
+.pageturning{
+	text-align: center;
+	padding-top: 40px;
+}
+
+.pageturning a{
+	line-height: 40px;
+	border: 1px solid #c7c7c7;
+	text-align: center;
+	margin-right:10px ;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	background: #f5f5f5;
+	border-radius: 3px;
+	color: black;
+}
+
+.hhh{
+	height: 35px;
+	padding-top:20px ;
+}
+.all-work-list .album-title{
+	float: left;
+}
+.all-work-list .hhh>a{
+	float: right;
+	color: orange;
+}
+.all-work-list .loadding-media-h .hot-album .card-type2-box{
+	float: left;
+	width: 15%;
+	padding:10px 10px ;
+	border: 1px solid #F4F4F4;
+	border-radius:3px ;
+	margin:0 14px;
+	background: #F4F4F4;
+}
+.all-work-list .loadding-media-h .hot-album .card-type2-box:hover{
+	opacity: 0.8;
+}
+.all-work-list .loadding-media-h .hot-album .card-type2-title2-title-box a{
+	color: #000000;
+}
+
+.all-work-list .loadding-media-h .hot-album .card-type2-title2-title-box a:hover{
+	color: red;
+}
+.word-list-box .album-title{
+	padding-top: 20px;
+	
+}
+.word-list-box .card-box{
+	float: left;
+	width: 15%;
+	padding:10px 10px ;
+	border: 1px solid #F4F4F4;
+	border-radius:3px ;
+	margin: 0 14px;
+	background: #F4F4F4;
+}
+.ooo{
+	height: 50px;
+}
+.word-list-box .card-box .card-img:hover{
+	opacity: 0.8;
+}
+.word-list-box .card-box .card-info a{
+	color: #000000;
+}
+
+.word-list-box .card-box .card-info a:hover{
+	color: red;
+}

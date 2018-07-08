@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/H-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/H-ui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/libs.min.js " type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$(function(){
+			//页面加载结束之后执行的代码
+			var oTab = $("#tab");
+			var oUl = oTab.find("ul");
+			var aImg = oTab.find("ul li");
+			var oOl = oTab.find("ol");
+			var index = 0;//存当前在第几张图上
+			var btnIndex = 0;//存小按钮的下标
+			var timer = null;//自动轮播的定时器timer
+			var Width=1350;
+			//计算ul的宽度
+			oUl.css("width", (aImg.length+1) * Width);
+			//插入小圆点按钮
+			for(var i = 0; i < aImg.length; i++){
+				if(i == 0){
+					$("<li class='ac'></li>").appendTo(oOl);
+				}else{
+					$("<li></li>").appendTo(oOl);
+				}
+				
+			}
+			var aBtn = oTab.find("ol li");
+			//复制一份第一个li并追加到ul内部
+			aImg.eq(0).clone().appendTo(oUl);
+			//oUl.append(aImg.eq(0).clone());
+			
+			
+			aBtn.on("click",function(){
+				index = $(this).index();
+				changeImg(index,index);
+				
+			})
+			
+			$("#goPrev").on("click",function(){
+				if(index == 0){
+					//切换到第0张的时候，拉回到附加的一张
+					oUl.css("left",-aImg.length*Width);
+					index = aImg.length - 1;
+					btnIndex = aImg.length - 1;
+				}else{
+					index--;
+					btnIndex--;
+				}
+				changeImg(index,btnIndex);
+			})
+			console.log(aImg.length);
+			$("#goNext").on("click",function(){
+				if(index == aImg.length){
+					//图片切换到附加那一张时，回到第0张
+					oUl.css("left",0);
+					index = 1;
+					btnIndex = 1;
+				}else if(index == aImg.length - 1){
+					//图片在播到最后一张时还允许往后再来一次
+					//但是小按钮不行
+					index++;
+					btnIndex = 0;
+				}else{
+					index++;
+					btnIndex++;
+				}
+				changeImg(index,btnIndex);
+			})
+			//切换图片，接收一个图片下标的参数
+			function changeImg(i,j){
+				var left = -i * Width;
+				oUl.animate({"left": left});
+				aBtn.eq(j).addClass("ac").siblings().removeClass("ac");
+			}
+			function autoPlay(){
+				timer = setInterval(function(){
+					//确定index
+					//切换图片
+					//自动触发一下向后切换的按钮
+					$("#goNext").trigger("click");//每隔三秒点击了一下向后的按钮
+				},3000);
+			}
+			autoPlay();
+			
+			oTab.hover(function(){
+				clearInterval(timer);
+			},function(){
+				autoPlay();
+			});
+			
+		})
+	</script>
+	</head>
+	<body>
+		<div class="topbar" style="background-color:#ecebeb">
+    <div class="cl wp">
+        <div class="topLeft l">
+            <ul>
+                <li>
+                  <a href="https://www.hellorf.com" class=" active ">
+                  	<i class="iconpic iconpic-nav-pic va-m"></i> 
+                  <span class="va-m">图片</span></a>
+                </li>
+                <li>
+                  <a href="https://www.hellorf.com/video">
+                  	<i class="iconpic iconpic-nav-video va-m"></i> 
+                  <span class="va-m">视频</span></a>
+                </li>
+                                  
+                
+                                  <li>
+                    <a style="color: #ea4335; font-weight: bold;" target="_blank" href="https://www.hellorf.com/inspiration/lesselement">
+                      <span class="va-m">热卖-简元素</span>
+                    </a>
+                  </li>
+                
+            </ul>
+        </div>
+        <div class="topRight r" id='image_login'>
+            <div style="display:none"><img src="img/icon-arrow-down2.png"></div>
+	<ul>
+	    <li class="topbar-price"><a href="https://www.hellorf.com/image/package">价格</a></li>
+	    <li class="pipe">|</li>
+	    <li><a href="http://contributor.hellorf.com">供图</a></li>
+	    <li class="pipe">|</li>
+	    <li><a href="https://www.hellorf.com/image/dfaq">客服</a></li>
+	    <li class="pipe">|</li>
+	    	        <li><a href="javascript:;" id="topnav_login">请登录</a></li>
+	        <li class="pipe">|</li>
+	        <li><a href="https://www.hellorf.com/user/reg?from=https://www.hellorf.com">注册</a></li>
+	    
+	    <li style="display:inline-block" class="dropDown dropDown_hover" id="sitelink">
+	    	<a href="javascript:void(0);" class="dropDown_A">
+	    	<i class="iconpic iconpic-nav-menu"></i></a>
+	        <ul class="dropDown-menu radius">
+	        <li class="arrow"></li>
+	            <li><a target="_blank" href="http://www.zcool.com.cn">站酷主站</a></li>
+	            <li><a target="_blank" href="http://job.zcool.com.cn/">站酷招聘</a></li>
+	            <li><a target="_blank" href="http://www.gogoup.com/ ">高高手</a></li>
+	        </ul>
+	    </li>
+	</ul>
+
+        </div>
+    </div>
+</div>
+
+
+<style type="text/css">
+.ac_results {
+    margin-left: -11px
+}
+</style>
+  <div class="index-page">
+    
+<link href="//static.hellorf.com/v180706154231/hellorf/css/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+<div class="banner cl has-dots" style="margin-top:-1px; height:460px; overflow:hidden;background-color: rgb(230, 94, 94);">
+    <div class="wp" style="position:relative;z-index:2">
+        <a href="/" target="_self" title="站酷海洛"><i class="iconpic iconpic-index-banner-logo"></i></a>
+        <div class="searchBar searchBar-big" style="background-color: rgba(255,255,255,0.5);border: solid 5px rgba(0,0,0,0.1);border-radius: 8px;">
+            <form class="form-search" method="get" name="form-search" onsubmit="return search('searchTxt');">
+                <input class="searchTxt" placeholder="搜索照片、矢量图和插画，多个词用空格隔开" id="searchTxt">
+                                <button class="btn btn-primary searchBtn" id="searchBtn" name="searchBtn">
+                    <i class="icon icon-search"></i>
+                </button>
+            </form>
+        </div>
+
+                
+
+    </div>
+ 	<div class="tab" id="tab">
+		
+			<ul>
+				<li style="text-align: center;"><a href="javascript:;"><img id="imgwidth" src="img/banner-1.jpg"></a></li>
+				<li style="text-align: center;"><a href="javascript:;"><img src="img/banner-2.jpg"></a></li>
+				<li style="text-align: center;"><a href="javascript:;"><img src="img/banner-3.jpg"></a></li>
+				<li style="text-align: center;"><a href="javascript:;"><img src="img/banner-4.jpg"></a></li>
+			</ul>
+			<a href="javascript:;" id="goPrev" style="text-decoration: none">&laquo;</a>
+			<a href="javascript:;" id="goNext" style="text-decoration: none">&raquo;</a>
+			<ol></ol>
+	</div>
+</div>
+<div class="tongji-bar">
+            <span class="c-bbb" style="color: #bbb;">目前在线</span>
+        <span class="c_primary">199,505,322</span>
+        <span class="c-bbb" style="color: #bbb;">张图片，昨日新增</span>
+        <span class="c_primary link-updateCount-show" style="text-decoration:underline; cursor:pointer">206,262</span>
+        <span class="c-bbb" style="color: #bbb;">张</span>
+        <span class="c-bbb ml-20 mr-20" style="color: #bbb;">|</span>
+        <a href="https://www.hellorf.com/image/package" class="c_primary"><strong>立即购买图片&gt;&gt;</strong></a>
+</div>
+<div class="text-c" style="padding:50px 0; background-color:#f8f8f8">
+    <h2 class="f-26" style="margin:0">改变您的工作方式从站酷海洛开始！</h2>
+    <p class="f-16 mt-20">
+        <a href="javascript:;" onClick="modal_video()" style="text-decoration:none"><i class="icon icon-video va-m"></i>
+        <span class="va-m c_primary">观看视频 了解站酷海洛</span>
+        </a>
+    </p>
+</div>
+<div style="padding:50px 0">
+    <div class="wp cl feature">
+        <dl id="feature-1" class="item">
+            <dt>
+                100%正版
+            </dt>
+            <dd>
+                <b style="color:#f34a35">
+                拒绝盗版，高额赔付
+                </b>
+                <br>
+                我们将对作品版权永久担保，拒绝任何版权困扰 </dd>
+        </dl>
+        <dl id="feature-2" class="item">
+            <dt>
+                价格低廉
+            </dt>
+            <dd>统一售价，最低25元一张<br>
+                随时付款，真正的互联网式解决方案</dd>
+        </dl>
+        <dl id="feature-3" class="item">
+            <dt>
+                图片库庞大
+            </dt>
+            <dd>每周新增80万张图片<br>
+                特色：4000万张矢量插画</dd>
+        </dl>
+        <dl id="feature-4" class="item" style="width:215px">
+            <dt>
+                发票支持
+            </dt>
+            <dd>支持普通发票和增值税发票<br>
+                流程简单，购买后可在线提交申请</dd>
+        </dl>
+    </div>
+</div>
+
+<div style="padding:50px 0;background-color:#f8f8f8">
+    <div class="wp cl">
+        <h2 class="text-c f-30" style="margin:0;position: relative;">精选专辑
+            <div style="position: absolute;right: 0;font-size: 14px;top: 16px;">
+                                    <a class="c_666" href="https://www.hellorf.com/inspiration/category/topic-hot" style="padding-right:20px" target="_blank">视角</a>
+                                    <a class="c_666" href="https://www.hellorf.com/inspiration/category/geographic" style="padding-right:20px" target="_blank">地理</a>
+                                    <a class="c_666" href="https://www.hellorf.com/inspiration/category/life" style="padding-right:20px" target="_blank">生活</a>
+                                    <a class="c_666" href="https://www.hellorf.com/inspiration/category/art" style="padding-right:20px" target="_blank">艺术</a>
+                                    <a class="c_666" href="https://www.hellorf.com/inspiration/category/blank-leaving" style="padding-right:20px" target="_blank">留白</a>
+                                    <a class="c_666" href="https://www.hellorf.com/inspiration/category/portrait" style="padding-right:20px" target="_blank">人物</a>
+                                <a class="c_666" href="https://www.hellorf.com/inspiration" target="_blank">更多&gt;&gt;</a>
+            </div>
+        </h2>
+        <ul class="cl mt-40 index-pic-list">
+                            <li>
+                    <span class="picbox">
+                    <a href="https://www.hellorf.com/inspiration/minimalist" target="_blank"><img src="img/picbox-1.jpeg"></a>
+                    </span>
+                    <span class="textbox">
+                    <a href="https://www.hellorf.com/inspiration/minimalist" target="_blank">Simple</a>
+                    </span>
+                </li>
+                            <li>
+                    <span class="picbox">
+                    <a href="https://www.hellorf.com/inspiration/touch" target="_blank"><img src="img/picbox-2.jpeg"></a>
+                    </span>
+                    <span class="textbox">
+                    <a href="https://www.hellorf.com/inspiration/touch" target="_blank">全息触控</a>
+                    </span>
+                </li>
+                            <li>
+                    <span class="picbox">
+                    <a href="https://www.hellorf.com/inspiration/vector-internet-illustration" target="_blank"><img src="img/picbox-3.jpeg"></a>
+                    </span>
+                    <span class="textbox">
+                    <a href="https://www.hellorf.com/inspiration/vector-internet-illustration" target="_blank">矢量互联网插画合集</a>
+                    </span>
+                </li>
+                            <li>
+                    <span class="picbox">
+                    <a href="https://www.hellorf.com/inspiration/fruit-background" target="_blank"><img src="img/picbox-4.jpeg"></a>
+                    </span>
+                    <span class="textbox">
+                    <a href="https://www.hellorf.com/inspiration/fruit-background" target="_blank">水果平铺背景</a>
+                    </span>
+                </li>
+                    </ul>
+    </div>
+</div>
+<!--//分类查看-->
+<div style="padding:50px 0;">
+    <div class="wp cl">
+        <h2 class="text-c f-30" style="margin:0">按分类查看</h2>
+        <ul class="index-fenlei-list cl">
+            <li>
+                <a href="https://www.hellorf.com/image/travel" target="_blank">旅游专题</a>
+            </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=29" target="_blank">矢量图</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=28" target="_blank">编辑</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=23" target="_blank">插图/剪贴图</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=13" target="_blank">人物</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=2" target="_blank">建筑物/地标</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=17" target="_blank">符号/标志</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=27" target="_blank">美容/时装服饰</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=12" target="_blank">自然</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=24" target="_blank">复古风格</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=3" target="_blank">背景/素材</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=31" target="_blank">名人</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=4" target="_blank">商业/金融</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=0" target="_blank">交通运输</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=18" target="_blank">运动/娱乐活动</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=1" target="_blank">动物/野生生物</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=8" target="_blank">假期</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=21" target="_blank">室内</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=5" target="_blank">教育</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=9" target="_blank">物体</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=14" target="_blank">宗教</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=15" target="_blank">科学</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=16" target="_blank">科技</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=26" target="_blank">抽象</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=11" target="_blank">艺术</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=10" target="_blank">工业</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=25" target="_blank">公园/户外</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=7" target="_blank">医疗保健</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=6" target="_blank">食品及饮料</a>
+                </li>
+                            <li>
+                    <a href="https://www.hellorf.com/image/search?category=22" target="_blank">其它</a>
+                </li>
+                    </ul>
+    </div>
+</div>
+<!--广告-->
+
+<script type="text/javascript">
+	$(function(){
+		var roll=$("#rollpicshow1");
+		var oul=roll.find("ul");
+		var oimg=roll.find("ul li");
+		var index=1;
+		oul.css("width",(oimg.length+3)*380+360);
+		oimg.eq(0).clone().appendTo(oul);
+		oimg.eq(1).clone().appendTo(oul);
+		oimg.eq(2).clone().appendTo(oul);
+		$("#prev1").on("click",function(){
+			if(index==0){
+				index=1;
+				
+			}else{
+				index--;
+			oul.css("left",0);
+			}
+			oul.css("left",index*-1260);
+		})
+		$("#next1").on("click",function(){
+			if(index==2){
+				index=1;
+				oul.css("left",0);
+			}else{
+				index++;
+           
+			}
+			 oul.css("left",-1260*index);
+		})
+		function changeimg(i){
+			var left=i*380;
+			oul.animate("left",left);
+		}
+	})
+</script>
+<div style="padding:50px 0; background-color:#f8f8f8">
+    <div class="wp cl">
+        <h2 class="text-c f-30" style="margin:0">数万家优质企业选择站酷海洛</h2>
+        <div id="yonghu2" class="rollpic cl" style="margin-top:40px;">
+            <a href="javascript:void(0)" id="prev1" class="prev" style="text-decoration: none; z-index: 5;display: block;font-size: 40px;position: absolute;line-height: 50px;height: 50px;top: 115px;padding: 0;margin: 0;">&laquo;</a>
+            <div id="rollpicshow1" class="rollpicshow" style="visibility: visible;overflow: hidden; position: relative; width:1226px;">
+                <ul>
+                    <li>
+                        <div class="pic-box"><img src="img/huashangbao.jpg"></div>
+                        <div class="dt">站酷海洛的确是一个设计类中新锐、丰富、专业的素材库，高水准的设计素材能让你站在大师的肩上完善自己的作品，强大的搜索引擎能准确的捕捉你的需求并加以推荐一系列让你目不暇接的意外收获，总之，带着你的创意来，没有它实现不了的。</div>
+                        <div class="dd">华商报视觉设计部主任 白宁</div>
+                    </li>
+                    <li>
+                        <div class="pic-box"><img src="img/kaisha.jpg"></div>
+                        <div class="dt">站酷海洛的素材内容覆盖特别全面，海量的图片、矢量素材足以满足设计创意需要，并且购买过的素材都是在线下载、授权，便于公司的素材资源管理，整体用起来都很方便。</div>
+                        <div class="dd">凯撒媒体公关部 新媒体总监 张淼</div>
+                    </li>
+                    <li>
+                        <div class="pic-box"><img src="img/taibo.jpg"></div>
+                        <div class="dt">作为一个从业十多年的平面设计师，创意图片一直是工作中不可缺少的视觉素材，站酷旗下“站酷海洛”作为一家专业的创意图片供应商，更懂设计师的审美需求，图片素材类别多样，特色鲜明，品质高端，对设计师的工作效率与出品质量有着明显提升。</div>
+                        <div class="dd">钛铂新媒体大客户事业群设计总监 徐海涛</div>
+                    </li>
+                    <li>
+                        <div class="pic-box"><img src="img/huawei.jpg"></div>
+                        <div class="dt">站酷旗下正版图库网站“站酷海洛”以创意图片见长，有着鲜明的特色，丰富的图片启发了设计师的思维，并为设计师提供了高质量的素材，有利于设计行业的整体质量提升。</div>
+                        <div class="dd">华为终端UI设计部主管 郝华奇</div>
+                    </li>
+                    <li>
+                        <div class="pic-box"><img src="img/zhihu.jpg"></div>
+                        <div class="dt">站酷海洛图库涵盖各行各业相关的图片与矢量图，清晰度高，审美很棒；图源非常新鲜，热点相关的图源丰富。可以满足资讯类平台日常配图的绝大部分需求。</div>
+                        <div class="dd">知乎日报编辑 王率丁</div>
+                    </li>
+                    <li>
+                        <div class="pic-box"><img src="img/hunlimao.jpg"></div>
+                        <div class="dt">婚礼猫 我最大的感触在于设计效率的提高以及作品水平的提升。我们公司是做婚嫁行业的移动互联网项目，用户对审美标准比较高。使用站酷海洛正版高质量图，不止省下我们UI设计师工作时间，还大大提升了作品水平。</div>
+                        <div class="dd"> 婚礼猫CEO 吴宗庆</div>
+                    </li>
+                </ul>
+            </div>
+            <a href="javascript:void(0)" id="next1" class="next" style="text-decoration: none; display: block;font-size: 40px;position: absolute;line-height: 50px;height: 50px;top: 115px;padding: 0;margin: 0;">&raquo;</a>
+        </div>
+ 
+        <div id="flink-logo" class="rollpic cl" style="margin-top:40px;left: 10px;">
+            <a href="javascript:void(0)" id="prev2" class="prev" style="text-decoration: none; display: none;font-size: 40px;position: absolute;padding: 0;margin: 0;">&laquo;</a>
+        	
+            <div id="rollpicshow2" class="rollpicshow" style="visibility:visible;overflow: hidden;position: relative; width:1251px;z-index: 2;left: 0;">
+                <ul>
+                    <li><img width="113" height="50" title="" src="img/logo2-10.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-11.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-12.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-13.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-1.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-2.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-3.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-4.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-5.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-6.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-7.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-8.png"></li>
+                    <li><img width="113" height="50" title="" src="img/logo2-9.png"></li>
+                </ul>
+            </div>
+            <a href="javascript:void(0)" id="next2" class="next" style="text-decoration: none; display: none;font-size: 40px;position: absolute;padding: 0;margin: 0;">&raquo;</a>
+        
+        </div>
+    </div>
+</div>
+            
+<!--底部搜索框-->
+
+<div style="padding:50px 0">
+    <div class="wp cl">
+        <h2 class="text-c f-30" style="margin:0">为您节省一半的工作时间  立即体验</h2>
+        <div class="pos-r">
+            <div class="searchBar searchBar-big" style="margin:38px auto auto; position: static;background-color: rgba(255,255,255,0.5);border: solid 5px rgba(0,0,0,0.1);border-radius: 8px;">
+                <form class="form-search" method="get" name="form-search" onsubmit="return search('searchTxt2');">
+                    <input class="searchTxt" placeholder="搜索照片、矢量图和插画，多个词用空格隔开" id="searchTxt2">
+                                        <button class="btn btn-primary searchBtn" id="searchBtn2" name="searchBtn">
+                        <i class="icon icon-search"></i>
+                    </button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+  <div class="j_footer">
+    <div class="container">
+      <!-- footer 开始 -->
+            <div class="line line-2 mt-40 footer-line wp"></div>
+        <div class="cl wp mt-40 footer-nav">
+        <div style="width: 222px; height: 145px; border-right:solid 1px #ededed" class="l">
+        <div class="mt-5 f-16"><strong>关于站酷海洛</strong></div>
+        <ul style="margin-top:17px" class="c_sub l24 cl">
+            <li><a target="_blank" href="https://www.hellorf.com/image/about">关于我们</a></li>
+            <li><a target="_blank" href="https://www.hellorf.com/image/product">产品介绍</a></li>
+            <li><a target="_blank" href="https://www.hellorf.com/image/licensing">授权协议</a></li>
+            <li><a target="_blank" href="https://m.hellorf.com/">海洛移动版</a></li>
+            <li><a target="_blank" href="https://open.hellorf.com/">海洛API</a></li>
+            <li><a target="_blank" href="//weibo.com/hellorf"><i class="icon icon-sinawb2"></i></a><a target="_blank" href="http://hellorf.zcool.com.cn/" class="ml-10"><i class="icon icon-zcool"></i></a> </li>
+        </ul>
+    </div>
+
+    <div style="width: 222px; height: 145px; border-right:solid 1px #ededed; padding-left:67px" class="l">
+        <div class="mt-5 f-16">
+          <a target="_blank" href="https://www.hellorf.com/image/dfaq" class=""><strong>常见问题</strong></a>
+        </div>
+        <ul style="margin-top:17px" class="c_sub l24 cl">
+                                          <li>
+                  <a target="_blank" href="https://www.hellorf.com/question?category_id=109" >关于套餐</a>
+                </li>
+               
+                                          <li>
+                  <a target="_blank" href="https://www.hellorf.com/question?category_id=3" >关于账户</a>
+                </li>
+               
+                                          <li>
+                  <a target="_blank" href="https://www.hellorf.com/question?category_id=4" >授权/版权</a>
+                </li>
+               
+                                          <li>
+                  <a target="_blank" href="https://www.hellorf.com/question?category_id=5" >购买/支付</a>
+                </li>
+               
+                                          <li>
+                  <a target="_blank" href="https://www.hellorf.com/question?category_id=6" >下载问题</a>
+                </li>
+               
+                                          <li>
+                  <a target="_blank" href="https://www.hellorf.com/question?category_id=7" >退款/退图</a>
+                </li>
+               
+                           
+                        <li><a target="_blank" href="https://www.hellorf.com/image/dfaq">更多问题</a></li>
+        </ul>
+    </div>
+
+    <div style="width: 222px; height: 145px; border-right:solid 1px #ededed;padding-left:67px" class="l">
+        <div class="mt-5 f-16"><a target="_blank" href="https://www.hellorf.com/image/contact" class=""><strong>联系我们</strong></a></div>
+        <div id="BizQQWPA2" class="mt-15"><a href="https://www.hellorf.com/image/dfaq"><img src="img/QQ24.png"></a></div>
+        <div class="mt-15"><a target="_blank" class="c_sub" href="https://www.hellorf.com/image/contact">更多联系方式</a></div>
+    </div>
+    <div class="l" style="width: 222px; height: 145px;padding-left:67px">
+        <div class="mt-5 f-16"><strong>关注公众号</strong> <span class="f-12">更多创意  产品资讯
+</span></div>
+        <div style="margin-top:17px">
+            <img src="img/weixincode.png">
+        </div>
+    </div>
+    <div style="width:100px" class="r"> <a target="_blank" href="http://www.zcool.com.cn/"><img src="img/footer-logo.png"></a> </div>
+</div>
+
+<footer class="footer">
+	    	<div class="wp pos-r">
+            Copyright &copy; 2004-2018 站酷海洛 版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京站酷网络科技有限公司旗下产品 
+<a style="margin-left: 10px;" target="_blank" href="http://www.miibeian.gov.cn/">京ICP备11017824号-7</a>
+<a style="margin-left: 10px;" target="_blank" href="http://www.miibeian.gov.cn/">京ICP证130164号</a>
+<a style="margin-left: 10px;" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502034683"><img style="margin-top: -2px;" src="img/icon-police.png" alt=""> 京公网安备 11010502034683号</a>        <a target="_blank" style="position:absolute; right:0; top:0;" href="https://ss.knet.cn/verifyseal.dll?sn=e14060411010549628joxl000000&ct=df&a=1&pa=0.5191530159208924"><img src="img/kexin.png"></a>
+        <a target="_blank" style="position:absolute; right:78px; top:0;" href="//www.miibeian.gov.cn/"><img src="img/beian.png"></a>
+        <a target="_blank" style="position:absolute; right:156px; top:0;" href="//v.pinpaibao.com.cn/authenticate/cert/?site=www.hellorf.com&at=realname "><img height="25" width="67" src="img/124x47.png"></a>
+    </div>
+</footer>
+<a class="rightTools r-cache" href="https://www.hellorf.com/image/batch/carts" style="background-size: 40px;">批量下载<span class="rache-num">0</span></a>
+<a style="background-size: 40px" class="rightTools r-favorite" href="https://www.hellorf.com/image/user/favorites" target="_blank">收藏夹</a>
+<a class="rightTools r-visited" style="background-size: 40px" href="https://www.hellorf.com/image/user/visited" target="_blank">浏览记录</a>
+<a class="rightTools r-qq" style="background-size: 40px"  id="BizQQWPA3" onclick="qimoChatClick();">在线客服</a>
+<a class="rightTools Feedback" style="background-size: 40px" onClick="Feedback()">意见反馈</a>
+<a href="javascript:void(0)"  class="rightTools toTop rightTools-small" style="display: block;background-size: 40px auto;">返回顶部</a>
+<a href="javascript:void(0)" class="gifimg" style="display: block;z-index: 2;"><img src="img/iconpic-gifimg.png"/></a>
+       <script type="text/javascript">
+        	$(function(){
+			//页面加载结束之后执行的代码
+			var roll2 = $("#rollpicshow2");
+			var oul2 = roll2.find("ul");
+			var oimg2 = roll2.find("ul li");
+			var index = 0;//存当前在第几张图上
+			var timer = null;//自动轮播的定时器timer
+			//计算ul的宽度
+			oul2.css("width", (oimg2.length*2-1) *139);
+	
+			//复制一份第一个li并追加到ul内部
+			for(i=0;i<oimg2.length-1;i++){
+			oimg2.eq(i).clone().appendTo(oul2);
+			}
+			//oUl.append(aImg.eq(0).clone());
+			
+			
+			$("#pre2").on("click",function(){
+				if(index == 0){
+					//切换到第0张的时候，拉回到附加的一张
+					oul2.css("left",(oimg2.length-1)*139);
+					index = oimg2.length - 1;
+				}else{
+					index--;changeimg2(index);
+				}
+				
+			})
+			$("#next2").on("click",function(){
+				if(index == oimg2.length){
+					//图片切换到附加那一张时，回到第0张
+					oul2.css("left",0);
+					index = 1;
+				}else{
+					index++;
+				}
+				changeimg2(index);
+			})
+			//切换图片，接收一个图片下标的参数
+			function changeimg2(i){
+				var left = -i * 139;
+				oul2.animate({"left": left});
+
+			}
+			function autoPlay2(){
+				timer = setInterval(function(){
+					//确定index
+					//切换图片
+					//自动触发一下向后切换的按钮
+					$("#next2").trigger("click");//每隔三秒点击了一下向后的按钮
+				},2000);
+			}
+			autoPlay2();
+			
+			roll2.hover(function(){
+				clearInterval(timer);
+			},function(){
+				autoPlay2();
+			})
+			
+		})
+        </script>
+	</body>
+</html>
